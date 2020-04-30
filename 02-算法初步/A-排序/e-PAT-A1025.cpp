@@ -31,7 +31,7 @@ int main(int argc, char **argv)
         scanf("%d", &k);
         for (int j = 0; j < k; ++j)
         {
-            scanf("%d %d", &stu[num].id, &stu[num].score);
+            scanf("%lld %d", &stu[num].id, &stu[num].score);
             stu[num].locationNumber = i; // 考场号
             ++num;
         }
@@ -58,7 +58,7 @@ int main(int argc, char **argv)
         {
             r = i + 1; // 当前考生成绩遇上一个考生不同时，排名等于当前考生人数 +1
         }
-        printf("%d %d %d %d\n", stu[i].id, r, stu[i].locationNumber, stu[i].localRank);
+        printf("%lld %d %d %d\n", stu[i].id, r, stu[i].locationNumber, stu[i].localRank);
     }
     return 0;
 }
