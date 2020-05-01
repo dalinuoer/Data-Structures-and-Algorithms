@@ -19,6 +19,7 @@ void selectSort(int* a, int n) // 待排序数组 数组元素个数
     {
         int k = i; // 记录 a[i] -- a[n-1] 最小元素位置
         for (int j = i; j < n; ++j) // 每趟 n - i 次
+        {
             if (a[j] < a[k])
             {
                 k = j;
