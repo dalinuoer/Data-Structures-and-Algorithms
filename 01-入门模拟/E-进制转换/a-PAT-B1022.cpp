@@ -2,6 +2,7 @@
 * PAT B1022
 * Author: Qin Hao
 * Date: 2020/4/29
+* https://dalinuoer.github.io/2020/04/29/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/
 */
 
 #include <iostream>
