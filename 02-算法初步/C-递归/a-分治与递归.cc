@@ -1,7 +1,7 @@
 /*
 * 分治与递归
 * Author: Qin Hao
-* Date: 2020/5/1
+* Date: 2020/5/8
 */
 
 // 分治法，分而治之，将原问题划分为若干规模较小而结构与原问题相同或相似的子问题，
@@ -29,11 +29,7 @@ int func(int n)
 // Fibonacci数列
 int fibonacci(int n)
 {
-    if (n == 0)
-    {
-        return 1;
-    }
-    else if (n == 1)
+    if (n == 0 || n == 1)
     {
         return 1;
     }
@@ -141,7 +137,7 @@ void nQueens(int index)
             }
             if (flag) // 如果可以把皇后放在第 x 行
             {
-                P[index] = x; // 令第 index 烈皇后的行号为 x
+                P[index] = x; // 令第 index 列皇后的行号为 x
                 hashTable[x] = true; // 第 x 行已被占用
                 nQueens(index + 1); // 递归处理第 index+1 行皇后
                 hashTable[x] = false; // 递归完毕，还原第 x 行为未占用
