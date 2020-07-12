@@ -43,7 +43,7 @@ double solve(double L, double R)
 // 有一个从侧面看起来是一个半圆的储水装置，该半圆半径为 R，要求往里面注入高度为 h 的水，
 // 使其在侧面看去的面积与半圆面积的比例恰好为 r，给定 R 和 r，求高度 h。
 
-# include <cmath>
+#include <cmath>
 
 const double eps = 1e-5; // 精度
 const double pi = acos(-1.0); // 圆周率
