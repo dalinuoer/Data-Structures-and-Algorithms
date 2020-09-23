@@ -17,4 +17,58 @@
 // 如果 K==M 成立，说明第K大的数就是主元A[p]；
 // 如果 K<M 成立，就说明第K大的数在主元左侧，往左递归即可；
 // 如果 K<M 成立，就说明第K大的数在主元左侧，往左递归即可。
+// 算法以 left==right 作为递归边界，返回A[left]。
 
+// 随机选择算法，从A[left, right]中返回第K大的数
+#include <cstdlib>
+int randPartition(int A[], int left, int right)
+{
+    // 生成[left, right]内的随机数p
+    int p = (round(1.0 * rand() / RAND_MAX * (right - left) + left));
+    swap(A[p], A[left]); // 交换A[p]和A[left]
+
+    // 以下为原Partition函数的划分过程
+    int temp = A[left];
+    while (left < right)
+    {
+        while (left < right && A[right] > temp)
+        {
+            --right;
+        }
+        A[left] = A[right];
+
+        while (left < right && A[left] <= temp)
+        {
+            ++left;
+        }
+        A[right] = A[left];
+    }
+    A[left] = temp;
+    return left; // 返回相遇的下标
+}
+int randSelect(int A[], int left, int right, int K)
+{
+    if (left == right) // 边界
+    {
+        return A[left];
+    }
+
+    int p = randPartition(A, left, right); // 划分后主元的位置
+    int M = p - left + 1;
+
+    if (K == M)
+    {
+        return A[p];
+    }
+    else if (K < M) // 左侧
+    {
+        return randSelect(A, left, p - 1, K);
+    }
+    else if (K > M) // 右侧
+    {
+        return randSelect(A, p + 1, right, K);
+    }
+}
+
+// 可以证明，虽然随机选择算法的最坏时间复杂度是O(n^2)，但是其对任意输入的期望时间复杂度
+// 却是O(n)，这意味着不存在一组特定的数据能使这个算法出现最坏情况，是个相当实用和出色的算法。
