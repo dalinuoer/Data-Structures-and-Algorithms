@@ -11,7 +11,7 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    // sscanf 与 sprintf https://dalinuoer.github.io/2020/04/30/sscanf%20%E4%B8%8E%20sprintf/
+    // sscanf 与 sprintf
 
     int arraySize = 5;
     int a[arraySize] = {1, 2, 3, 4, 5};

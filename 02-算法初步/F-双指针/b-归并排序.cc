@@ -14,6 +14,9 @@
 
 // 1. 递归实现
 
+// 只需要反复将当前区间[left, right]分为两半，对两个子区间[left, mid]和[mid+1, right]
+// 分别递归进行归并排序，然后将两个已经有序的子区间合并为有序序列即可
+
 const int maxn = 100;
 // 将数组 A 的 [L1, R1] 和 [R1 + 1, R2] 区间合并为有序区间
 void merge(int A[], int L1, int R1, int L2, int R2)
@@ -34,12 +37,13 @@ void merge(int A[], int L1, int R1, int L2, int R2)
     // 将剩余元素加入序列temp
     while (i <= R1) temp[index++] = A[i++];
     while (j <= R2) temp[index++] = A[j++];
-    // 将合并后的序列副指挥数组 A
+    // 将合并后的序列赋值回数组 A
     for (i = 0; i < index; i++)
     {
         A[L1 + i] = temp[i];
     }
 }
+
 // 将 array 数组当前区间 [left, right] 进行归并排序
 void mergeSort(int A[], int left, int right)
 {
