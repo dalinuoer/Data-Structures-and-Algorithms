@@ -21,6 +21,11 @@ top()
 pop()
 empty()
 size()
-
+// 清空操作的实现
+void clear(stack<typename> &st) {
+    while (!st.empty()) {
+        st.pop();
+    }
+}
 // 4. stack 常见用途
 // stack 用来模拟实现一些递归，防止程序对栈内存的限制而导致程序运行出错
