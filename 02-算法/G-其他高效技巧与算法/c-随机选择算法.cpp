@@ -21,6 +21,8 @@
 
 // 随机选择算法，从A[left, right]中返回第K大的数
 #include <cstdlib>
+#include <algorithm>
+using namespace std;
 int randPartition(int A[], int left, int right)
 {
     // 生成[left, right]内的随机数p

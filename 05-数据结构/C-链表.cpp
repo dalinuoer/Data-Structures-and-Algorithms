@@ -13,9 +13,11 @@ struct node
     node *next;
 };
 
+// 为链表结点分配和释放内存空间的两种方法
+// malloc
 node *p = (node *)malloc(sizeof(node));
 free(p);
-
+// new
 node *p = new node;
 delete (p);
 
@@ -130,5 +132,3 @@ while (p != -1)
     ++count;
     p = node[p]->next;
 }
-// 4.
-// TODO:
