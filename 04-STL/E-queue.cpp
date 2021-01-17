@@ -2,6 +2,7 @@
 * queue
 * Author: Qin Hao
 * Date: 2020/9/26
+* Update: 2021/1/17
 * Note: 
 */
 
@@ -19,13 +20,15 @@ using namespace std;
 
 // 3. queue 常用函数
 q.push(x)                 压进队尾
-front() / back()
+front() / back()          取队首/队尾元素
 pop()                     弹出队首元素
 empty()                   检测queue是否为空
 size()
 // 清空操作的实现
-void clear(queue<typename> &q) {
-    while (!st.empty()) {
+void clear(queue<typename> &q) 
+{
+    while (!st.empty()) 
+    {
         q.pop();
     }
 }

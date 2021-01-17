@@ -2,7 +2,8 @@
 * stack
 * Author: Qin Hao
 * Date: 2020/9/26
-* Note: 
+* Update：2021/1/17
+* Note: 增加部分注释以及修改代码格式
 */
 
 // stack 翻译为栈，是STL中定义的一个先进后出的容器
@@ -16,14 +17,16 @@ stack<typename> name; // typename 可以是任意基本数据类型或容器
 // 只能通过 top() 来访问栈顶元素
 
 // 3. stack 常用函数
-push(x)
-top()
-pop()
-empty()
-size()
+push(x)         压栈
+top()           取栈顶元素值
+pop()           栈顶元素出栈
+empty()         判断栈是否为空
+size()          计算栈的大小
 // 清空操作的实现
-void clear(stack<typename> &st) {
-    while (!st.empty()) {
+void clear(stack<typename> &st) 
+{
+    while (!st.empty()) 
+    {
         st.pop();
     }
 }
