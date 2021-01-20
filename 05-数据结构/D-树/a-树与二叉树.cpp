@@ -59,22 +59,22 @@
 struct node
 {
     typename data; // 数据域
-    node* lchild; // 指向左子树根结点的指针
-    node* rchild; // 指向右子树根结点的指针
+    node *lchild;  // 指向左子树根结点的指针
+    node *rchild;  // 指向右子树根结点的指针
 };
-node* root = nullptr;
+node *root = nullptr;
 
 // 新建结点
-node* newNode(int v)
+node *newNode(int v)
 {
-    node* Node = new node;
+    node *Node = new node;
     Node->data = v;
     Node->lchild = Node->rchild = nullptr;
     return Node;
 }
 
 // 查找、修改
-void search(node* root, int x, int newdata)
+void search(node *root, int x, int newdata)
 {
     if (root == nullptr) // 空树，死胡同（递归边界）
     {
@@ -92,7 +92,7 @@ void search(node* root, int x, int newdata)
 // 插入
 // 二叉树结点的插入位置就是数据域在二叉树中查找失败的位置
 // 注意根结点指针 root 需使用引用，否则插入不会成功
-void insert(node* &root, int x)
+void insert(node *&root, int x)
 {
     if (root == nullptr) // 空树，说明查找失败，也即插入位置（递归边界）
     {
@@ -116,9 +116,9 @@ void insert(node* &root, int x)
 
 // 创建
 // 其实就是二叉结点的插入过程
-node* create(int data[], int n)
+node *create(int data[], int n)
 {
-    node* root = nullptr;
+    node *root = nullptr;
     for (int i = 0; i < n; ++i)
     {
         insert(root, data[i]);
