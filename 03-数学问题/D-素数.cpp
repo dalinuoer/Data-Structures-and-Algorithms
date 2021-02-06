@@ -12,12 +12,15 @@
 #include <cmath>
 bool isPrime(int n)
 {
-    if (n <= 1) { // 特判
+    if (n <= 1)
+    { // 特判
         return false;
     }
     int sqr = (int)sqrt(1.0 * n);
-    for (int i = 2; i < sqr; ++i) {
-        if (n % i == 0) {
+    for (int i = 2; i < sqr; ++i)
+    {
+        if (n % i == 0)
+        {
             return false;
         }
     }
@@ -32,12 +35,15 @@ bool isPrime(int n)
 const int maxn = 101; // 表长
 int prime[maxn], pNum = 0;
 bool p[maxn] = {0}; // 如果i为素数，则p[i]为false，否则为true
-void findPrime() 
+void findPrime()
 {
-    for (int i = 2; i < maxn; ++i) {
-        if (p[i] == false) {
+    for (int i = 2; i < maxn; ++i)
+    {
+        if (p[i] == false)
+        {
             prime[pNum++] = i;
-            for (int j = i + 1; j < maxn; j += i) {
+            for (int j = i + 1; j < maxn; j += i)
+            {
                 p[j] = true;
             }
         }
@@ -45,4 +51,20 @@ void findPrime()
 }
 
 // 欧拉筛法，时间复杂度 O(n)
-// TODO 待学习
+void getPrime(vector<int> &prime, int upper_bound) // 传引用
+{ 
+    if (upper_bound < 2)
+        return;
+    vector<bool> Is_prime(upper_bound + 1, true);
+    for (int i = 2; i <= upper_bound; i++)
+    {
+        if (Is_prime[i])
+            prime.push_back(i);
+        for (int j = 0; j < prime.size() and i * prime[j] <= upper_bound; j++)
+        {
+            Is_prime[i * prime[j]] = false;
+            if (i % prime[j] == 0)
+                break; // 保证了一个数只被筛一次。
+        }
+    }
+}
