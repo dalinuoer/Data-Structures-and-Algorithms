@@ -1,5 +1,5 @@
 /**
- * @file J-KMP算法.cpp
+ * @file d-KMP算法.cpp
  * @author Qin Hao (qinhao2020@foxmail.com)
  * @brief 
  * @version 0.1
